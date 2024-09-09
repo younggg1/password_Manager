@@ -45,11 +45,11 @@ bool Loginwindow::loginUser(const QString& username, const QString& password) {
     for (const auto& user : usersArray) {
         QJsonObject obj = user.toObject();
         if (obj["username"].toString() == username) {
-            // 加密输入的密码进行匹配
-            QByteArray hash = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256);
-            QString encryptedPassword = hash.toHex();
+            // // 加密输入的密码进行匹配
+            // QByteArray hash = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256);
+            // QString encryptedPassword = hash.toHex();
 
-            if (obj["password"].toString() == encryptedPassword) {
+            if (obj["password"].toString() == password) {
                 QMessageBox::information(nullptr, "提示", "登录成功，进入主界面");
 
                 return true;
