@@ -80,8 +80,7 @@ void Loginwindow::on_pushButton_login_2_clicked()
     }else if(password.isEmpty()){
         QMessageBox::warning(this, "提示", "密码不能为空");
         return;
-    }
-    if(loginUser(username, password)){
+    }else if(loginUser(username, password)){
             // 打开主窗口，并传递当前用户名
             MainWindow *passUsername = new MainWindow(nullptr, username);
             // 显示主窗口
@@ -91,8 +90,6 @@ void Loginwindow::on_pushButton_login_2_clicked()
             //mainwindow.show();//进入主界面
             this->close();//隐藏登录界面
             clearInputFields(); // 登录成功后清除输入框内容
-    }else {
-        QMessageBox::warning(this, "错误", "用户名或密码不正确");
     }
 }
 void Loginwindow::toLogin(){
