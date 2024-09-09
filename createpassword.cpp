@@ -25,8 +25,8 @@ CreatePassword::~CreatePassword()
 }
 // // 密码加密函数（使用SHA-256）
 // QString CreatePassword::encryptPassword(const QString &password) {
-//     QByteArray hash = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256);
-//     return hash.toHex();
+// QByteArray hash = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256);
+// QString encryptedPassword = hash.toHex();
 // }
 // 保存密码到当前用户的文件
 void CreatePassword::savePassword(const QString &name, const QString &url, const QString &username, const QString &password) {
