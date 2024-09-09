@@ -49,14 +49,14 @@ void RegisterWindow::registerUser(const QString& username, const QString& passwo
         }
     }
 
-    // 加密用户密码（使用SHA-256哈希加密）
-    QByteArray hash = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256);
-    QString encryptedPassword = hash.toHex();
+    // // 加密用户密码（使用SHA-256哈希加密）
+    // QByteArray hash = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256);
+    // QString encryptedPassword = hash.toHex();
 
     // 创建新用户对象
     QJsonObject newUser;
     newUser["username"] = username;
-    newUser["password"] = encryptedPassword;
+    newUser["password"] = password;
     newUser["password_data"] = QJsonArray();  // 初始化空的密码数据
 
     // 将新用户添加到用户数组中
